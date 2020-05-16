@@ -1,11 +1,19 @@
 @import "reset.css";
+@import "modal.css";
+
+/* used colors */
+/* bright purple #8352ff */
+/* dark purple #3200a8 */
+/* black rgb(34, 34, 34) */
+/* gray rgb(110, 110, 110) */
 
 body{
     display: flex;
-    min-height: 100vh;
+    min-width: 360px;
+    height: 100vh;
     flex-direction: column;
     background-color: rgb(34, 34, 34);
-    font-family: 'Pangolin', cursive;
+    font-family: 'Balsamiq Sans', 'Nanum Gothic', cursive;
     color: rgb(218, 218, 218);
 }
 
@@ -40,7 +48,7 @@ section{
     width: 60%;
 }
 
-img{
+.indeximg{
     width: 55%;
 }
 
@@ -63,7 +71,7 @@ input{
     width: 80%;
 }
 
-button{
+.search-button{
     background: transparent;
     cursor: pointer;
     border:none;

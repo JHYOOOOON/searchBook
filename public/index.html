@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/index.css">
+    <title>SearchBook</title>
+</head>
+
+<body>
+    <header>
+        <p>SearchBook📖✍</p>
+        <p>EX</p>
+    </header>
+    <div class="section-wrap">
+        <section>
+            <img class="indeximg" src="image/books.jpg" alt="books">
+            <div class="section-search">
+                <input type="text" placeholder="Search.." class="search-input" />
+                <button class="search-button"><i class="fas fa-search fa-2x"></i></button>
+            </div>
+            <div class="section-text">
+                <p class="title">Find Books you want!</p>
+                <p class="description">You can search books using this input. <br />And you can see recommended books
+                    from developer at EX.<br /> Have a nice day!</p>
+            </div>
+            <div class="modal-wrapper">
+                <div class="modal">
+                    <div class="modal-header">
+                        <p class="search-result-title"></p>
+                        <button class="modal-button"><i class="fas fa-times fa-2x"></i></button>
+                    </div>
+                    <div class="modal-section">
+                        <div class="modal-loading">🏃‍♀️🏃‍♂️<br>Loading ...</div>
+                        <div class="modal-contents-wrapper">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p class="footer-text"></p>
+    </footer>
+
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/footer.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</body>
+
+</html>

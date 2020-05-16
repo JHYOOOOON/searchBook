@@ -1,0 +1,147 @@
+.modal-wrapper{
+    display: none;
+    position: absolute;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: 70%;
+    height: 90%;
+    border-radius: 5px;
+    z-index: 999;
+    background-color: white;
+    color: rgb(75, 75, 75);
+}
+
+.modal-wrapper::-webkit-scrollbar{
+    display: none;
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    padding-bottom: 0;
+    font-size: 20px;
+    color: rgb(75, 75, 75);
+}
+
+.modal-button{
+    color: rgb(75, 75, 75);
+}
+
+.modal-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-result-title{
+    font-weight: 600;
+    padding: 10px 0;
+    border-bottom: 3px dashed #8352ff;
+}
+
+.modal-loading{
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1.2;
+    animation: fontcolor 3s infinite alternate;
+}
+
+.modal-contents-wrapper{
+    margin: 20px;
+    margin-right: 35px;
+}
+
+.imgWrap{
+    position: relative;
+    height: 174px;
+}
+
+.imgCard{
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
+    color: black;
+}
+
+.search-book{
+    display: flex;
+    text-align: left;
+    margin-bottom: 17px;
+}
+
+.book-text{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.book-title{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: rgb(59, 59, 59);
+}
+
+.book-subText{
+    font-size: 14px;
+    color: rgb(105, 105, 105);
+}
+
+.author{
+    padding-left: 2px;
+    padding-right: 7px;
+}
+
+.publisher, .datetime{
+    padding: 0 7px;
+}
+
+.publisher{
+    border-left: 1.5px solid rgb(117, 117, 117);
+    border-right: 1.5px solid rgb(117, 117, 117);
+}
+
+.price{
+    display: inline-block;
+    font-size: 16px;
+    background-color: #3200a8;
+    color: white;
+    padding: 4px;
+    border-radius: 3px;
+    margin: 8px 0;
+}
+
+.book-description{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: keep-all;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.2;
+    
+}
+
+@keyframes fontcolor{
+    0%{
+        color: rgb(75, 75, 75);
+    }
+    50%{
+        color: #8352ff;
+    }
+    100%{
+        color: #3200a8;
+    }
+}

@@ -45,3 +45,9 @@ table {
 input:focus, button:focus{
 	outline: none;
 }
+
+button{
+	background: transparent;
+    cursor: pointer;
+    border:none;
+}
