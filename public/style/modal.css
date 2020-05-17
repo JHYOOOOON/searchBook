@@ -1,3 +1,11 @@
+@media screen and (min-width: 1000px){
+    .modal-contents{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 15px;
+    }
+}
+
 .modal-wrapper{
     display: none;
     position: absolute;
@@ -47,14 +55,25 @@
     border-bottom: 3px dashed #8352ff;
 }
 
-.modal-loading{
+.modal-loading, .modal-error{
+    align-items: center;
+    height: 70vh;
     font-size: 35px;
     font-weight: 600;
     line-height: 1.2;
     animation: fontcolor 3s infinite alternate;
 }
 
+.modal-loading{
+    display: flex;
+}
+
+.modal-error{
+    display:none;
+}
+
 .modal-contents-wrapper{
+    display: none;
     margin: 20px;
     margin-right: 35px;
 }
@@ -78,24 +97,35 @@
 .search-book{
     display: flex;
     text-align: left;
-    margin-bottom: 17px;
+    padding-bottom: 15px;
 }
 
 .book-text{
-    margin-left: 10px;
-    margin-top: 10px;
+    margin: 7px 0 7px 10px;
 }
 
 .book-title{
-    font-size: 18px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-size: 16px;
     font-weight: 600;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
+    line-height: 1.1;
     color: rgb(59, 59, 59);
 }
 
 .book-subText{
-    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-size: 13px;
     color: rgb(105, 105, 105);
+    line-height: 1.2;
 }
 
 .author{
@@ -114,23 +144,23 @@
 
 .price{
     display: inline-block;
-    font-size: 16px;
+    font-size: 15px;
     background-color: #3200a8;
     color: white;
     padding: 4px;
     border-radius: 3px;
-    margin: 8px 0;
+    margin: 6px 0;
 }
 
 .book-description{
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
     word-break: keep-all;
     overflow: hidden;
-    font-size: 15px;
-    line-height: 1.2;
+    font-size: 14px;
+    line-height: 1.3;
     
 }
 

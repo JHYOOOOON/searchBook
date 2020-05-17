@@ -1,35 +1,50 @@
 const modalInit = () => {
   const searchBtn = document.getElementsByClassName("search-button")[0],
     searchInput = document.getElementsByClassName("search-input")[0],
-    modalBtn = document.getElementsByClassName("modal-button")[0];
+    modalBtn = document.getElementsByClassName("modal-button")[0],
+    bg = document.getElementsByClassName("background")[0];
   searchBtn.addEventListener("click", handleSubmit);
   searchInput.addEventListener("keyup", function (e) {
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
       handleSubmit();
     }
   });
+  document.addEventListener("keyup", function(e){
+    const modalWrap = document.getElementsByClassName("modal-wrapper")[0];
+    if(e.key === "Escape" && modalWrap.style.display === "block"){
+      handleModal();
+    }
+  })
+  bg.addEventListener("click", handleModal);
   modalBtn.addEventListener("click", handleModal);
 };
 
 const handleModal = () => {
   const modalWrap = document.getElementsByClassName("modal-wrapper")[0],
     loading = document.getElementsByClassName("modal-loading")[0],
-    contents = document.getElementsByClassName("modal-contents")[0];
-    loading.style.display = "block";
+    contents = document.getElementsByClassName("modal-contents")[0],
+    error = document.getElementsByClassName("modal-error")[0],
+    bg = document.getElementsByClassName("background")[0];
+
   modalWrap.style.display = "none";
+  bg.style.display = "none";
+  loading.style.display = "flex";
+  error.style.display = "none";
   contents.remove();
 };
 
 const handleSubmit = () => {
   const searchInput = document.getElementsByClassName("search-input")[0],
     resultTitle = document.getElementsByClassName("search-result-title")[0],
-    modalWrap = document.getElementsByClassName("modal-wrapper")[0];
+    modalWrap = document.getElementsByClassName("modal-wrapper")[0],
+    bg = document.getElementsByClassName("background")[0];
 
   const value = searchInput.value;
   callAPI(value);
   searchInput.value = "";
   resultTitle.innerText = `Keywords: ${value}`;
   modalWrap.style.display = "block";
+  bg.style.display = "block";
 };
 
 const callAPI = async (text) => {
@@ -39,17 +54,19 @@ const callAPI = async (text) => {
       params: { query: `${text}` },
       headers: { Authorization: "KakaoAK 35045909edb8ba6d74780353c9ad8d92" },
     })
-    .then((res) => (data = res.data.documents))
+    .then((res) => {
+      data = res.data.documents;
+    })
     .catch((error) => console.log(`API error: ${error}`));
-  paintResult(data);
+
+  data.length === 0 ? paintError() : paintResult(data);
 };
 
 const paintResult = (data) => {
   const loading = document.getElementsByClassName("modal-loading")[0],
     contents = document.getElementsByClassName("modal-contents-wrapper")[0];
-  loading.style.display = "none";
   const modalContents = document.createElement("div");
-  modalContents.className="modal-contents";
+  modalContents.className = "modal-contents";
   for (let i = 0; i < data.length; i++) {
     const div = document.createElement("div");
     div.className = "search-book";
@@ -65,7 +82,8 @@ const paintResult = (data) => {
     more.innerHTML = `<i class="fas fa-search-plus"></i> more view`;
     imgCard.appendChild(more);
     const img = document.createElement("img");
-    img.src = data[i].thumbnail;
+    console.log(data[i].thumbnail);
+    img.src = data[i].thumbnail ? data[i].thumbnail : "image/no image.png";
     img.alt = data[i].title;
     img.className = "book-thumbnail";
 
@@ -118,28 +136,37 @@ const paintResult = (data) => {
     div.appendChild(bookText);
     modalContents.appendChild(div);
   }
+  loading.style.display = "none";
   contents.appendChild(modalContents);
+  contents.style.display = "block";
   hoverEvent();
 };
 
 const hoverEvent = () => {
   const thumbnail = document.querySelectorAll(".book-thumbnail");
-  for(let i=0; i<thumbnail.length; i++){
+  for (let i = 0; i < thumbnail.length; i++) {
     thumbnail[i].parentNode.addEventListener("mouseenter", handleHoverIn);
     thumbnail[i].parentNode.addEventListener("mouseleave", handleHoverOut);
   }
-}
+};
+
+const paintError = () => {
+  const loading = document.getElementsByClassName("modal-loading")[0],
+    error = document.getElementsByClassName("modal-error")[0];
+  loading.style.display = "none";
+  error.style.display = "flex";
+};
 
 const handleHoverIn = (e) => {
   const card = e.target,
-  img = card.firstChild;
+    img = card.firstChild;
   img.style.display = "flex";
-}
+};
 
 const handleHoverOut = (e) => {
   const card = e.target,
-  img = card.firstChild;
+    img = card.firstChild;
   img.style.display = "none";
-}
+};
 
 modalInit();
