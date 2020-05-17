@@ -13,6 +13,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     width: 70%;
+    min-width: 350px;
     height: 90%;
     border-radius: 5px;
     z-index: 999;
