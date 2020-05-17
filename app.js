@@ -5,7 +5,10 @@ const port = 8080 || process.env.PORT;
 const path = require('path');
 
 app.use(express.static(__dirname + '/public'));
-app.use(express.static('style'));
+
+app.get('/', function(req, res){
+  res.render('index');
+})
 
 app.listen(port, function(err) {
   console.log('Connected port - ' + port);
