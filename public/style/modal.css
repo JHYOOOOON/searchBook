@@ -9,6 +9,7 @@
 @media screen and (max-width: 500px){
     .imgWrap{
         width: 95px;
+        height: 137.75px;
     }
     .book-subText{
         -webkit-line-clamp: 1;
@@ -16,11 +17,15 @@
     .book-description{
         -webkit-line-clamp: 2;
     }
+    .imgCard > p{
+        font-size: 14px;
+    }
 }
 
 @media screen and (min-width: 500px){
     .imgWrap{
         width: 120px;
+        height: 174px;
     }
     .book-subText{
         -webkit-line-clamp: 2;
@@ -126,6 +131,7 @@
 
 .book-thumbnail{
     width: 100%;
+    height: 100%;
 }
 
 .search-book{

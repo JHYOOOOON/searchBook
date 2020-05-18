@@ -76,6 +76,7 @@ const paintResult = (data) => {
     imgWrap.className = "imgWrap";
     const link = document.createElement("a");
     link.href = data[i].url;
+    link.target = "_blank";
     const imgCard = document.createElement("div");
     imgCard.className = "imgCard";
     const more = document.createElement("p");
