@@ -6,6 +6,30 @@
     }
 }
 
+@media screen and (max-width: 500px){
+    .imgWrap{
+        width: 95px;
+    }
+    .book-subText{
+        -webkit-line-clamp: 1;
+    }
+    .book-description{
+        -webkit-line-clamp: 2;
+    }
+}
+
+@media screen and (min-width: 500px){
+    .imgWrap{
+        width: 120px;
+    }
+    .book-subText{
+        -webkit-line-clamp: 2;
+    }
+    .book-description{
+        -webkit-line-clamp: 3;
+    }
+}
+
 .modal-wrapper{
     display: none;
     position: absolute;
@@ -13,7 +37,6 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     width: 70%;
-    min-width: 350px;
     height: 80%;
     border-radius: 5px;
     z-index: 999;
@@ -24,6 +47,7 @@
 .modal-wrapper::-webkit-scrollbar{
     display: none;
 }
+
 .modal{
     display: flex;
     flex-direction: column;
@@ -41,6 +65,7 @@
 }
 
 .modal-button{
+    margin-left: 10px;
     color: rgb(75, 75, 75);
 }
 
@@ -51,6 +76,9 @@
 }
 
 .search-result-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-weight: 600;
     padding: 10px 0;
     border-bottom: 3px dashed #8352ff;
@@ -75,13 +103,14 @@
 
 .modal-contents-wrapper{
     display: none;
+}
+
+.modal-contents{
     margin: 20px;
-    margin-right: 35px;
 }
 
 .imgWrap{
     position: relative;
-    height: 174px;
 }
 
 .imgCard{
@@ -93,6 +122,10 @@
     height: 100%;
     width: 100%;
     color: black;
+}
+
+.book-thumbnail{
+    width: 100%;
 }
 
 .search-book{
@@ -115,12 +148,10 @@
     font-weight: 600;
     margin-bottom: 5px;
     line-height: 1.1;
-    color: rgb(59, 59, 59);
 }
 
 .book-subText{
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
     overflow: hidden;
@@ -155,7 +186,6 @@
 
 .book-description{
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
     word-break: keep-all;
