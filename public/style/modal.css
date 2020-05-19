@@ -6,7 +6,7 @@
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 550px){
     .imgWrap{
         width: 95px;
         height: 137.75px;
@@ -22,7 +22,7 @@
     }
 }
 
-@media screen and (min-width: 500px){
+@media screen and (min-width: 550px){
     .imgWrap{
         width: 120px;
         height: 174px;
@@ -149,6 +149,7 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
+    word-break: break-all;
     overflow: hidden;
     font-size: 16px;
     font-weight: 600;
@@ -160,6 +161,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
+    word-break: break-all;
     overflow: hidden;
     font-size: 13px;
     color: rgb(105, 105, 105);
@@ -194,7 +196,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
-    word-break: keep-all;
+    word-break: break-all;
     overflow: hidden;
     font-size: 14px;
     line-height: 1.3;
