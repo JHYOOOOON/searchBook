@@ -9,12 +9,12 @@ const modalInit = () => {
       handleSubmit();
     }
   });
-  document.addEventListener("keyup", function(e){
+  document.addEventListener("keyup", function (e) {
     const modalWrap = document.getElementsByClassName("modal-wrapper")[0];
-    if(e.key === "Escape" && modalWrap.style.display === "block"){
+    if (e.key === "Escape" && modalWrap.style.display === "block") {
       handleModal();
     }
-  })
+  });
   bg.addEventListener("click", handleModal);
   modalBtn.addEventListener("click", handleModal);
 };
@@ -42,7 +42,7 @@ const handleSubmit = () => {
   const value = searchInput.value;
   callAPI(value);
   searchInput.value = "";
-  resultTitle.innerText = `Keywords: ${value}`;
+  resultTitle.innerText = `검색어: ${value}`;
   modalWrap.style.display = "block";
   bg.style.display = "block";
 };
@@ -56,6 +56,7 @@ const callAPI = async (text) => {
     })
     .then((res) => {
       data = res.data.documents;
+      console.log("API DATA::: ", res.data);
     })
     .catch((error) => console.log(`API error: ${error}`));
 
@@ -80,10 +81,10 @@ const paintResult = (data) => {
     const imgCard = document.createElement("div");
     imgCard.className = "imgCard";
     const more = document.createElement("p");
+    more.className = "moreBtn";
     more.innerHTML = `<i class="fas fa-search-plus"></i> more view`;
     imgCard.appendChild(more);
     const img = document.createElement("img");
-    console.log(data[i].thumbnail);
     img.src = data[i].thumbnail ? data[i].thumbnail : "image/no image.png";
     img.alt = data[i].title;
     img.className = "book-thumbnail";

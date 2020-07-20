@@ -2,116 +2,138 @@
 @import "modal.css";
 
 /* used colors */
-/* bright purple #8352ff */
+/* bright purple #6c3ce4 */
 /* dark purple #3200a8 */
 /* black rgb(34, 34, 34) */
 /* gray rgb(110, 110, 110) */
 
-body{
-    min-width: 360px;
-    /* min-height: 300px; */
-    position:relative;
-    font-family: 'Balsamiq Sans', 'Nanum Gothic', cursive;
-    color: rgb(218, 218, 218);
-    background-color: rgb(34, 34, 34);
+@media screen and (min-width: 850px) {
+  .img-search-wrapper {
+    width: 70%;
+  }
 }
 
-.background{
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 50;
-    background-color: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
+@media screen and (max-width: 850px) {
+  .img-search-wrapper {
+    width: 95%;
+  }
 }
 
-.body-wrapper{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+/* body */
+body {
+  min-width: 360px;
+  /* min-height: 300px; */
+  position: relative;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #eee;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    background-image: linear-gradient(to bottom right, #8352ff , #3200a8);
-    font-weight: 600;
-    font-size: 20px;
+.background {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-header > p{
-    padding: 15px;
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.section-wrap{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #3200a8;
+  color: #eee;
+  font-weight: 600;
+  font-size: 20px;
 }
 
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    width: 60%;
+header > p {
+  padding: 15px;
 }
 
-.indeximg{
-    width: 55%;
+/* section */
+.section-wrap {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
 }
 
-.section-search{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    margin: 25px 0;
-    background-color: rgb(75, 75, 75);
-    border-radius: 20px;
-    width: 90%;
-    height: 45px;
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 60%;
 }
 
-input{
-    background: transparent;
-    border:none;
-    font-size: 20px;
-    padding-left: 15px;
-    width: 80%;
+.indeximg {
+  width: 75%;
 }
 
-.search-button{
-    background: transparent;
-    cursor: pointer;
-    border:none;
-    margin-right: 15px;
-    color: rgb(110, 110, 110);
+.section-search {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 25px 0;
+  width: 100%;
+  height: 45px;
+  background-color: white;
+  border-radius: 5px;
 }
 
-.title{
-    margin-bottom: 10px;
-    font-size: 30px;
-    font-weight: 600;
-    color: #966dff;
+input {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  padding-left: 15px;
+  width: 80%;
 }
 
-.description{
-    font-size: 18px;
-    line-height: 1.1;
+.search-button {
+  background: #6c3ce4;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  border: none;
+  padding: 0 10px;
+  color: #eee;
 }
 
-footer{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 20px 15px;
-    background-color: rgb(61, 61, 61);
-    color: grey;
-    font-size: 13px;
+.section-text {
+  word-break: keep-all;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #6c3ce4;
+}
+
+.description {
+  font-size: 18px;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 30px 15px;
+  background-color: rgb(221, 220, 220);
+  color: rgb(167, 164, 164);
+  font-size: 13px;
 }
