@@ -3,6 +3,7 @@ const modalInit = () => {
     searchInput = document.getElementsByClassName("search-input")[0],
     modalBtn = document.getElementsByClassName("modal-button")[0],
     bg = document.getElementsByClassName("background")[0];
+
   searchBtn.addEventListener("click", handleSubmit);
   searchInput.addEventListener("keyup", function (e) {
     if (e.keyCode === 13) {
@@ -24,9 +25,11 @@ const handleModal = () => {
     loading = document.getElementsByClassName("modal-loading")[0],
     contents = document.getElementsByClassName("modal-contents")[0],
     error = document.getElementsByClassName("modal-error")[0],
-    bg = document.getElementsByClassName("background")[0];
+    bg = document.getElementsByClassName("background")[0],
+    input = document.getElementsByClassName("search-input")[0];
 
   modalWrap.style.display = "none";
+  input.disabled = false;
   bg.style.display = "none";
   loading.style.display = "flex";
   error.style.display = "none";
@@ -37,13 +40,15 @@ const handleSubmit = () => {
   const searchInput = document.getElementsByClassName("search-input")[0],
     resultTitle = document.getElementsByClassName("search-result-title")[0],
     modalWrap = document.getElementsByClassName("modal-wrapper")[0],
-    bg = document.getElementsByClassName("background")[0];
+    bg = document.getElementsByClassName("background")[0],
+    input = document.getElementsByClassName("search-input")[0];
 
   const value = searchInput.value;
   callAPI(value);
   searchInput.value = "";
   resultTitle.innerText = `검색어: ${value}`;
   modalWrap.style.display = "block";
+  input.disabled = true;
   bg.style.display = "block";
 };
 
